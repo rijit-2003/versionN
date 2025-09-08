@@ -19,7 +19,7 @@ const SKILLS = [
   },
   {
     category: "Data Science",
-    items: ["StreamLit", "Pandas", "Numpy", "DuckDB", "Machine Learning", "", "Statistics"],
+    items: ["StreamLit", "Pandas", "Numpy", "DuckDB", "Machine Learning", "Statistics"],
   },
   {
     category: "Competitive Programming",
