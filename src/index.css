@@ -1068,3 +1068,271 @@ body {
   color: #8892b0;
   font-family: "Source Code Pro", monospace;
 }
+/* Hobbies page styles */
+.hobbies-page {
+  padding: 72px 0 120px;
+  color: #cdd8f6;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.hobbies-hero {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/* left intro */
+.hobbies-intro .muted-lead {
+  color: #64ffda;
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.hobbies-title {
+  font-size: clamp(32px, 5vw, 44px);
+  color: #e6eefc;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+
+.hobbies-tagline {
+  color: rgba(204,214,246,0.8);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* CTA group */
+.hobbies-ctas { margin-top: 18px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.btn.subtle { background: transparent; border: 1px solid rgba(100,255,218,0.06); color: #64ffda; padding: 10px 14px; border-radius:8px; text-decoration:none; }
+.btn.outline { border:1px solid rgba(100,255,218,0.14); background: rgba(10,20,30,0.2); color:#cfeee0; padding:10px 14px; border-radius:8px; }
+
+/* right visual */
+.hobbies-visual { display:flex; align-items:center; gap:18px; justify-content:flex-end; position:relative; }
+.badge {
+  width:84px; height:84px; border-radius:16px;
+  background: linear-gradient(180deg, rgba(100,255,218,0.18), rgba(100,255,218,0.06));
+  display:flex; align-items:center; justify-content:center;
+  font-size:38px; color:#64ffda; font-weight:700;
+  box-shadow: 0 10px 40px rgba(100,255,218,0.06);
+}
+.hero-card {
+  background: rgba(10,20,30,0.35);
+  border: 1px solid rgba(100,255,218,0.05);
+  padding: 18px;
+  border-radius: 12px;
+  width: 260px;
+  text-align: left;
+}
+.hero-card h4 { margin:0 0 6px; color:#cfeef0; }
+.card-sub { color: rgba(204,214,246,0.85); margin-bottom:8px; }
+.small-meta { font-family:"Source Code Pro", monospace; color: #89bfb3; font-size:12px; }
+
+/* grid of hobby cards */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.hobby-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border:1px solid rgba(100,255,218,0.04);
+  padding: 18px;
+  border-radius: 10px;
+  min-height: 170px;
+  display:flex; flex-direction:column; gap:10px;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.hobby-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(2,12,27,0.6); border-color: rgba(100,255,218,0.12); }
+.hobby-icon { font-size:24px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; background: rgba(100,255,218,0.03); border-radius:8px; color:#64ffda; }
+
+/* card footer */
+.card-foot { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+
+/* chess replay */
+.chess-replay { margin-top: 5px; }
+.chess-replay h3 { color:#cfeff3; margin-bottom:6px; }
+.chess-embed {
+  margin-top: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(100,255,218,0.03);
+  max-width: 960px;
+  height: 480px;
+  background: rgba(5,10,16,0.3);
+}
+.chess-embed iframe { width:100%; height:100%; display:block; border:0; }
+
+/* small/utility */
+.btn.tiny { padding:6px 10px; font-size:0.88rem; border-radius:8px; }
+.btn.primary { background: linear-gradient(90deg,#21f0c6,#10c4a5); color:#00181a; border:none; }
+.link-muted { color: rgba(204,214,246,0.6); text-decoration:none; }
+/* make the hero grid allocate more room for the right column */
+.hobbies-hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(360px, 520px); /* gives the right column more width */
+  gap: 36px;
+  align-items: start;
+}
+
+/* embed wrapper centers the board inside the column */
+.chess-embed-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* chess embed card sizing */
+.chess-embed {
+  width: 100%;
+  max-width: 520px;      /* cap width so it doesn't get insane on huge screens */
+  height: 640px;         /* fixed height that matches chess.com's UI nicely */
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(5,10,16,0.3);
+  border: 1px solid rgba(100,255,218,0.03);
+}
+
+/* the iframe should fill the container */
+.chess-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* controls below iframe */
+.replay-controls {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* responsive: stack columns on small screens */
+@media (max-width: 880px) {
+  .hobbies-hero {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .chess-embed {
+    max-width: 360px;
+    height: 540px;
+    margin: 18px auto 0;
+  }
+
+  .replay-controls {
+    justify-content: center;
+  }
+}
+
+/* smaller mobile */
+@media (max-width: 420px) {
+  .chess-embed {
+    width: 92%;
+    height: 440px;
+  }
+}
+/*improvements of hobbies*/
+/* ===== Hobbies page — improved layout for chess embed ===== */
+
+
+/* center and contain the embed nicely */
+.chess-embed-wrapper {
+  display: flex;
+  justify-content: center;   /* center embed inside the right column */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* larger comfortable size for embed */
+.chess-embed {
+  width: 100%;
+  max-width: 760px;          /* allow the embed to get wide on desktops */
+  height: auto;             /* taller so chess UI isn't squashed */
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(5,10,16,0.3);
+  border: 1px solid rgba(100,255,218,0.03);
+  box-sizing: border-box;
+}
+
+/* iframe fills the card */
+.chess-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* controls sit under the embed on wide screens and center on small screens */
+.replay-controls {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start; /* you can change to center or flex-end */
+}
+
+/* on narrow screens switch to single-column stacking */
+@media (max-width: 980px) {
+  .hobbies-hero {
+    grid-template-columns: 1fr;
+  }
+  .chess-embed {
+    max-width: 520px;
+    height: 20px;
+    margin: 10px auto 0;
+  }
+  .replay-controls { justify-content: center; }
+}
+
+/* small mobile */
+@media (max-width: 420px) {
+  .chess-embed {
+    width: 92%;
+    height: 480px;
+  }
+}
+/* Stand-up section */
+.standup-replay {
+  margin-top: 60px;
+}
+
+.standup-title {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;   /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%; /* tweak to crop the top */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
